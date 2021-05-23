@@ -5,5 +5,20 @@ Register Page
 {% endblock %}
 
 {% block content %}
-    {{ form }}
+<div class="container">
+    <form class="form-group" method="POST" style="color:white">
+        {{ form.username.label() }}
+        {{ form.username(class="from-control", placeholder = "User Name") }}
+
+        {{ form.email_address.label() }}
+        {{ form.email_address(class="from-control", placeholder = "Email Address") }}
+
+        {{ form.password1.label() }}
+        {{ form.password1(class="from-control", placeholder = "Password") }}
+
+        {{ form.password2.label() }}
+        {{ form.password2(class="from-control", placeholder = "Confirm Password") }}
+    </form>
+</div>
+
 {% endblock %}
