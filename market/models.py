@@ -1,6 +1,7 @@
 from sqlalchemy.orm import backref
 from werkzeug.exceptions import default_exceptions
 from market import db
+from market import bcrypt
 
 class User(db.Model):
 
@@ -10,6 +11,15 @@ class User(db.Model):
      email_address = db.Column(db.String(32), nullable=False, unique=True)
      budget = db.Column(db.Integer(), nullable=False, default=1000)
      items = db.relationship('item', backref='owned_user', lazy=True)
+
+     @property
+     def password(self):
+         return self.password
+    
+     @password.setter
+     def password(self, plain_text_password):
+        self.password_hash = bcrypt.get_password_hash(plain_text_password).decode('utf-8')
+
 
 class item(db.Model):
     
