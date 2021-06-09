@@ -25,6 +25,7 @@
           <tbody>
              <!-- Your rows inside the table HERE: -->
              {% for item in items %}
+             {% include 'includes/items_modals.html' %}
              <tr>
                 <td>{{ item.id }}</td>
                 <td>{{ item.name }}</td>
