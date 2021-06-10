@@ -2,8 +2,8 @@
 
 This code is based on a project made by jimdevops19 that can be found in https://github.com/jimdevops19/FlaskSeries.
 
-It's a simple web application using the python framework flask for the logic and the bootstrap framework for styling. The applications allows the user to register with an account and define his budget
-the market contains some items that can also be defined and when the user is logged in it can perform two basic applications
+It's a simple web application using the python framework flask for the logic and the bootstrap framework for styling. The applications allows the user to register with an account and define his budget.
+The market contains some items that can also be defined and when the user is logged in it can perform two basic applications:
 
 * Buy one of the items in the market
 * Sell one of the items that he owns
