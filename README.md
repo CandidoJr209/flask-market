@@ -1,4 +1,5 @@
-# Flask Market
+# Flask Market #
+## A market website made using flask and bootstrap ##
 
 This code is based on a project made by jimdevops19 that can be found in https://github.com/jimdevops19/FlaskSeries.
 
@@ -31,5 +32,10 @@ Now that you created a database you can add items to your market in the followin
 >>> db.session.add(item_1)
 >>> db.session.commit()
 ```
+To run the application type:
+```sh
+python run.py
+```
 
 The user registration and authentication can be done in the web application itself.
+
