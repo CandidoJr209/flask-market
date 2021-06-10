@@ -1,7 +1,7 @@
 from market import app
-from flask import render_template, redirect, url_for, flash, get_flashed_messages
+from flask import render_template, redirect, url_for, flash, request
 from market.models import item, User
-from market.forms import RegisterForm, LoginForm
+from market.forms import RegisterForm, LoginForm, PurchaseItemForm
 from market import db
 from flask_login import login_user, logout_user, login_required
 
@@ -9,11 +9,14 @@ from flask_login import login_user, logout_user, login_required
 def home():
     return render_template('home.html')
 
-@app.route("/market")
+@app.route("/market", methods=['GET', 'POST'])
 @login_required
-def market_page():
+def market_page():  
+    purchase_form = PurchaseItemForm()
+    if purchase_form.validate_on_submit():
+        print(request.form.get('purchased_item')) 
     items = item.query
-    return render_template('market.html', items=items)
+    return render_template('market.html', items=items, purchase_form = purchase_form)
 
 
 @app.route('/register', methods=['GET', 'POST'])
